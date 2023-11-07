@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculate 30% Addition</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for the result */
+    .result {
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="mt-4">Calculate 30% Addition</h1>
+
+    <div class="form-group">
+      <label for="inputValue">Enter a value:</label>
+      <input type="number" class="form-control" id="inputValue" placeholder="Enter a value" step="0.01"
+        oninput="calculateValue()">
+    </div>
+
+    <p class="mt-3">Result: <span id="result" class="result"></span></p>
+  </div>
+
+  <script>
+    function calculateValue() {
+      var inputValue = document.getElementById("inputValue").value;
+      var resultElement = document.getElementById("result");
+
+      var value = parseFloat(inputValue);
+
+      if (!isNaN(value)) {
+        var result = value + (0.3 * value);
+        resultElement.innerHTML = "<span class='result'>" + result + "</span>";
+      } else {
+        resultElement.innerHTML = "";
+      }
+    }
+  </script>
+</body>
+
+</html>
